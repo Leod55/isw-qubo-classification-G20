@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+logs/
+outputs/
+*.joblib
+*.csv
+!data/sample_test_dataset.csv
+.DS_Store
+.covrage
+.env
