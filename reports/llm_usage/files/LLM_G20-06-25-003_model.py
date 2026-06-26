@@ -20,7 +20,7 @@ from sklearn.metrics import (
 )
 
 # Add parent to path for local imports
-sys.path.insert(0, str(Path(__file__).parent.parent))
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from qubo_project.utils import setup_logger, save_json, load_json
 

@@ -10,5 +10,5 @@ outputs/
 *.csv
 !data/sample_test_dataset.csv
 .DS_Store
-.covrage
+.coverage
 .env

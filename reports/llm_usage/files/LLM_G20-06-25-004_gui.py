@@ -69,7 +69,7 @@ with st.sidebar:
     # Input dataset
     dataset_path = st.text_input(
         "Dataset CSV",
-        value="data/trial_dataset_ISW.csv",
+        value="data/input_dataset.csv",
         help="Path to the input CSV file (relative to project root)."
     )
     target_column = st.text_input("Target Column", value="target")
