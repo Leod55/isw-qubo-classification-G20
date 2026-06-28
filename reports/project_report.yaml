@@ -12,16 +12,16 @@
 
 schema_version: "1.0"
 
-group_id: "GXX"
+group_id: "G20"
 repository_url: "https://github.com/Leod55/isw-qubo-classification-G20.git"
-submission_date: "YYYY-MM-DD"
+submission_date: "2026-06-28"
 
 students:
   - student_id: "60/61/66413"        #Matricola completa
     role_in_project:
       - "preprocessing"
       - "feature_selection"
-      - "classif20ation"
+      - "classification"
       - "testing"
       - "documentation"
       - "gui"
@@ -36,154 +36,156 @@ students:
 
 team_work:
   work_distribution:
-    design_percent: null
-    preprocessing_percent: null
-    qubo_feature_selection_percent: null
-    classification_percent: null
-    testing_percent: null
-    gui_percent: null
-    documentation_percent: null
+    design_percent: 50
+    preprocessing_percent: 50
+    qubo_feature_selection_percent: 50
+    classification_percent: 50
+    testing_percent: 50
+    gui_percent: 50
+    documentation_percent: 50
   collaboration_mode:
     # valori suggeriti: "pair_programming", "divisione_per_moduli", "mista"
-    type: null
-    notes: null
-    remote_collaboration_perc: 0   # Percentuale di lavoro in call (0-100)
+    type: "pair_programming"
+    notes: "Mainly pair programming using an LLM to assist development."
+    remote_collaboration_perc: 25   # Percentuale di lavoro in call (0-100)
   estimated_total_hours:
-    student_1_hours: null
-    student_2_hours: null
-    total_group_hours: null
+    student_1_hours: 35
+    student_2_hours: 35
+    total_group_hours: 35
 
 initial_context:
   prior_experience:
     # valori da usare: "none", "basic", "intermediate", "advanced"
-    python: null
-    pandas_numpy: null
-    scikit_learn: null
-    machine_learning: null
-    classification: null
-    feature_selection: null
-    optimization: null
-    QUBO: null
-    git_github: null
+    python: "intermediate"
+    pandas_numpy: "basic"
+    scikit_learn: "none"
+    machine_learning: "none"
+    classification: "none"
+    feature_selection: "none"
+    optimization: "none"
+    QUBO: "none"
+    git_github: "basic"
   initial_confidence:
     # scala 1-5: 1 = per nulla sicuri, 5 = molto sicuri
-    python_project_development: null
-    qubo_formulation: null
-    machine_learning: null
-    debugging: null
-    validating_llm_outputs: null
+    python_project_development: 4
+    qubo_formulation: 1
+    machine_learning: 1
+    debugging: 4
+    validating_llm_outputs: 3
 
 design_choices:
-  correlation_computation: null
+  correlation_computation: "Used Spearman correlation (scipy.stats.spearmanr) to handle nonlinear relationships."
   QUBO_optimization_algorithm:
-    algorithm_name: null
-    library_used: null
-    reason_for_choice: null
+    algorithm_name: "Simulated Annealing"
+    library_used: "dwave-neal"
+    reason_for_choice: "Efficient heuristic algorithm to solve QUBO without requiring actual quantum hardware."
   classification_algorithm:
-    algorithm_name: null
-    library_used: null
-    reason_for_choice: null
-  gui_development: null
+    algorithm_name: "Random Forest"
+    library_used: "scikit-learn"
+    reason_for_choice: "Required by specifications, robust against overfitting and handles non-linear relationships well."
+  gui_development: "Streamlit was used to quickly build an interactive web interface."
   problems_encountered:
-    - problem: null
-      solution: null
-  notes:
+    - problem: "Tuning the alpha parameter in QUBO to reach the target feature percentage."
+      solution: "Implemented an iterative binary/linear search process adjusting alpha until the selected features fall within the allowed tolerance."
+  notes: "LLM was very useful for refining architecture and debugging."
 
 llm_usage_summary:
   # Non inserire prompt o risposte complete: saranno raccolti separatamente.
   llms_used:    # Inserire un record per ogni LLM usato
-    - name: null
-      version: null
-      paid_subscription: null
-      usage_level_0_to_3:   # valori da 0 (non usato) a 3 (usatissimo)     
-        value: null   
+    - name: "DeepSeek"
+      version: "Free"
+      paid_subscription: false
+      usage_level_0_to_3:
+        value: 3   
   phases_where_llm_was_used:
     requirements_understanding:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
-      notes: null
+      usage_level_0_to_3: 3
+      usefulness_1_to_5: 4
+      notes: "Especially at the beginning, the LLM was essential for understanding how to proceed based on the specifications."
     preprocessing:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
-      notes: null
+      usage_level_0_to_3: 3
+      usefulness_1_to_5: 5
+      notes: "Extremely helpful for development and debugging."
     qubo_formulation:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
-      notes: null
+      usage_level_0_to_3: 3
+      usefulness_1_to_5: 5
+      notes: "Extremely helpful for development and debugging."
     optimizer_selection:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
-      notes: null
+      usage_level_0_to_3: 3
+      usefulness_1_to_5: 5
+      notes: "Extremely helpful for development and debugging."
     classifier_selection:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
-      notes: null
+      usage_level_0_to_3: 3
+      usefulness_1_to_5: 5
+      notes: "Extremely helpful for development and debugging."
     debugging:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
-      notes: null
+      usage_level_0_to_3: 2
+      usefulness_1_to_5: 4
+      notes: "Extremely helpful for development and debugging."
     testing:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
-      notes: null
+      usage_level_0_to_3: 3
+      usefulness_1_to_5: 4
+      notes: "Extremely helpful for development and debugging."
     documentation:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
-      notes: null
+      usage_level_0_to_3: 2
+      usefulness_1_to_5: 3
+      notes: "It is the phase where the LLM was used the least, yet it was still useful."
     gui:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
-      notes: null
+      usage_level_0_to_3: 3
+      usefulness_1_to_5: 5
+      notes: "Extremely helpful for development and debugging."
   estimated_llm_contribution:
-    percent_code_generated_or_suggested_by_llm: null
-    percent_code_accepted_without_major_changes: null
-    percent_documentation_generated_or_suggested_by_llm: null
+    percent_code_generated_or_suggested_by_llm: 95
+    percent_code_accepted_without_major_changes: 85
+    percent_documentation_generated_or_suggested_by_llm: 60
   human_verification:
     # descrivere come il gruppo ha controllato gli output dell'LLM. (yes/partially/no)
     methods_used:
-      - code_execution: null
-      - automated_tests: null
-      - critical_reading: null
-      - comparison_with_other_llm: null
-    notes: null
+      - code_execution: "yes"
+      - automated_tests: "yes"
+      - critical_reading: "partially"
+      - comparison_with_other_llm: "no"
+    notes: "Every generated code block was tested and read through to look for obvious errors (some errors we wouldn't have been able to detect without the LLM's own debugging)"
   llm_misleading_outputs:
-    encountered: null  # (yes/partially/no)
-    examples_count: null   # number of cases
+    encountered: "partially"  # (yes/partially/no)
+    examples_count: 2   # number of cases
     categories:     # rispondere con: yes/partially/no
-      wrong_python_code: null  
-      wrong_library_usage: null
-      wrong_qubo_formulation: null
-      wrong_ml_methodology: null
-      hallucinated_api_or_function: null
-      other: null      # indicare quale/quali
-    impact_on_project: null   # valori da 0 (nessuno) a 3 (fortissimo)     
+      wrong_python_code: "partially"  
+      wrong_library_usage: "no"
+      wrong_qubo_formulation: "partially"
+      wrong_ml_methodology: "no"
+      hallucinated_api_or_function: "partially"
+      other: "none"      # indicare quale/quali
+    impact_on_project: 1   # valori da 0 (nessuno) a 3 (fortissimo)     
   llm_overall_assessment:  
-    productivity_improvement_1_to_5: null
-    learning_support_1_to_5: null
-    risk_of_overreliance_1_to_5: null
-    trust_in_llm_outputs_1_to_5: null
-    would_use_again: null   # (yes/maybe/no)
-    notes: null
-  most_useful_project_activity: null
-  most_difficult_project_activity: null
-  main_lessons_learned:   # descrivere con una frase per ogni lezione appresa
-    - null
+    productivity_improvement_1_to_5: 5
+    learning_support_1_to_5: 4
+    risk_of_overreliance_1_to_5: 3
+    trust_in_llm_outputs_1_to_5: 4
+    would_use_again: "yes"   # (yes/maybe/no)
+    notes: "Every error was just a single line within an otherwise completely correct block. The LLM hallucinated only once while reading the requirements."
+  most_useful_project_activity: "Iterative search logic for tuning the QUBO alpha parameter."
+  most_difficult_project_activity: "Debugging, response verification and writing documentation"
+  main_lessons_learned:
+    - "Specifications are one of the most important parts of the project."
+    - "LLM output must always be verified."
+    - "Teamwork is essential."
   main_problems:
-    - problem: null
-      severity_1_to_5: null
-      how_resolved: null
+    - problem: "Handling constant columns with zero variance during normalization"
+      severity_1_to_5: 3
+      how_resolved: "The LLM eventually provided the logic to check for constant columns and remove them before normalization."
 
 final_results:   # descrivere con una frase per ogni elemento che ritenete di citare
   what_worked_well:
-    - null
+    - "The team"
   what_did_not_work_well:
-    - null
-  main_benefit_of_using_llm: null
-  main_problem_of_using_llm: null
+    - "Sometimes it was necessary (or faster) to correct errors by hand."
+  main_benefit_of_using_llm: "Apart from minor errors, the LLM served as the lead project manager and developer."
+  main_problem_of_using_llm: "Prompting the LLM repeatedly to correctly format the QUBO matrix."
   surprising_findings:
-    - null
+    - ""
   limitations_of_the_solution:
-    - null
+    - ""
   threats_to_validity_from_team_perspective:
-    - null
+    - "Our evaluation is based on a specific dataset. The feature selection pipeline might behave differently on different datasets"
 

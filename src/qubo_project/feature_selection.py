@@ -86,6 +86,10 @@ class SimulatedAnnealingQUBO:
         # Initialise randomly
         x = np.random.randint(0, 2, size=self.n)
         current_energy = self._compute_energy(x)
+
+        if self.n <= 1:
+            return x.copy(), current_energy, [current_energy]
+
         best_x = x.copy()
         best_energy = current_energy
 

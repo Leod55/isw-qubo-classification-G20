@@ -81,6 +81,12 @@ def fit_normalize(
         f"Kept {len(kept_features)} features, dropped {len(dropped_features)} features."
     )
 
+    if len(kept_features) == 0:
+        raise ValueError(
+            f"Features dropped: minPercValid ({minPercValid}) too high or too many zeros/missing values."
+        )
+
+
     # =========================================================================
     # PASS 2: Read only the kept features + target into memory
     # =========================================================================
